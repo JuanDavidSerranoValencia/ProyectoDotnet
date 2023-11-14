@@ -4,8 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Persistencia.Entities;
-
+using Domain.Entities;
 namespace Persistencia.Data.Configuration
 {
     public class PersonTypeConfiguration : IEntityTypeConfiguration<PersonType>

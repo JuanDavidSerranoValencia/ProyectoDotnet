@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Persistencia.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,7 +10,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<ProyectoDotnetContext>(option =>
+{
+    string connectionString = builder.Configuration.GetConnectionString("MySqlConex");
+    option.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

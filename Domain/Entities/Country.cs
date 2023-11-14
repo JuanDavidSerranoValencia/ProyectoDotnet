@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Persistencia.Entities;
+namespace Domain.Entities;
 
-public partial class Country
+public  class Country :BaseEntity
 {
-    public int Id { get; set; }
 
     public string Name { get; set; } = null!;
 
